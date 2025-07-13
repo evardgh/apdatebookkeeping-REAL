@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Apdate: Smart Bookkeeping",
+  "description": "A simple, user-friendly bookkeeping and accounting app for the Ghanaian and international markets, powered by the Apdate AI financial assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "prompt": ""
+}

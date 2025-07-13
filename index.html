@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apdate: Smart Bookkeeping</title>
+    <link rel="icon" href="data:image/svg+xml,%3csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3clinearGradient id='grad1' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3e%3cstop offset='0%25' style='stop-color:rgb(249,250,251);stop-opacity:1' /%3e%3cstop offset='100%25' style='stop-color:rgb(243,244,246);stop-opacity:1' /%3e%3c/linearGradient%3e%3clinearGradient id='grad2' x1='50%25' y1='0%25' x2='50%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%233B82F6' /%3e%3cstop offset='100%25' stop-color='%232563EB' /%3e%3c/defs%3e%3crect width='100' height='100' rx='22' fill='url(%23grad1)'/%3e%3cpath d='M68.5919 51.5C68.5919 55.4437 67.243 58.7687 64.5451 61.475C61.8472 64.1812 58.2045 65.5343 53.6169 65.5343H46.3831C41.7955 65.5343 38.1528 64.1812 35.4549 61.475C32.757 58.7687 31.4081 55.4437 31.4081 51.5V49.0343H68.5919V51.5Z' fill='url(%23grad2)'/%3e%3cpath d='M72.4081 45.4156H27.5919C27.5919 38.0781 30.4357 32.2281 36.1234 27.8656C41.8111 23.5031 46.9924 21.3218 50 21.3218C53.0076 21.3218 58.1889 23.5031 63.8766 27.8656C69.5643 32.2281 72.4081 38.0781 72.4081 45.4156Z' fill='url(%23grad2)'/%3e%3c/svg%3e">
+    <script>
+      // Prevents theme flash by applying theme class before React loads
+      (function() {
+        try {
+          const item = localStorage.getItem('app-theme');
+          if (item === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          // Fallback to dark theme on error
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                'accent': '#2563EB',
+                'accent-fg': '#FFFFFF',
+                'destructive': '#D92D20',
+                'destructive-fg': '#FFFFFF',
+
+                // Light Theme
+                'light-bg-default': '#F8F9FA',
+                'light-bg-subtle': '#FFFFFF',
+                'light-bg-inset': '#F1F3F5',
+                
+                'light-fg-default': '#111827',
+                'light-fg-subtle': '#6B7280',
+                
+                'light-border-default': '#E5E7EB',
+
+                'light-income-fg': '#057A55',
+                'light-income-bg': '#DEF7EC',
+
+                'light-expense-fg': '#D92D20',
+                'light-expense-bg': '#FDE8E8',
+
+                // Dark Theme
+                'dark-bg-default': '#111827',
+                'dark-bg-subtle': '#1F2937',
+                'dark-bg-inset': '#374151',
+
+                'dark-fg-default': '#F9FAFB',
+                'dark-fg-subtle': '#9CA3AF',
+
+                'dark-border-default': '#374151',
+                
+                'dark-income-fg': '#34D399',
+                'dark-income-bg': '#043A2A',
+                
+                'dark-expense-fg': '#F98080',
+                'dark-expense-bg': '#4A1D1D',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+      @keyframes slide-up { from { opacity: 0; transform: translateY(1rem) } to { opacity: 1; transform: translateY(0) } }
+
+      .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
+      .animate-slide-up { animation: slide-up 0.3s ease-out forwards; }
+      .animate-fade-in-fast { animation: fade-in 0.15s ease-out forwards; }
+      .animate-slide-up-fast { animation: slide-up 0.2s ease-out forwards; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@^18.3.1/",
+    "react/": "https://esm.sh/react@^18.3.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^0.14.0",
+    "recharts": "https://esm.sh/recharts@^2.12.7",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@^3.8.2",
+    "firebase/app": "https://esm.sh/firebase@^10.12.2/app",
+    "firebase/auth": "https://esm.sh/firebase@^10.12.2/auth",
+    "firebase/firestore": "https://esm.sh/firebase@^10.12.2/firestore",
+    "firebase/": "https://esm.sh/firebase@^11.10.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased bg-light-bg-default dark:bg-dark-bg-default">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
